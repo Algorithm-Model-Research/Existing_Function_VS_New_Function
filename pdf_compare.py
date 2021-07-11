@@ -266,13 +266,22 @@ class Probability_Distribution_Function_AND_New_Function(object):
 
 
 
+        def activate_functions(self):
+            
+            # Print all the nessasary functions
+            self.plot_graphs(pdf_type="regular")
+            self.binolial_graph(pdf_type="regular")
+            self.representation_in2d(pdf_type="regular")
+            self.mgc_plot("Linear", only_mgc=True)
+            self.plot_graphs(pdf_type="not regular")
+            self.representation_in2d(pdf_type="not regular")
+
+
+
+
+
+
 if __name__ == "__main__":
 
     pdf_class = Probability_Distribution_Function_AND_New_Function(0,2.5,1000000)
-    pdf_class.plot_graphs(pdf_type="regular")
-    pdf_class.binolial_graph(pdf_type="regular")
-    pdf_class.representation_in2d(pdf_type="regular")
-    pdf_class.mgc_plot("Linear", only_mgc=True)
-    pdf_class.plot_graphs(pdf_type="not regular")
-    pdf_class.representation_in2d(pdf_type="not regular")
-
+    pdf_class.activate_functions()
