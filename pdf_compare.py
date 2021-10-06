@@ -50,22 +50,22 @@ class Probability_Distribution_Function_AND_New_Function(object):
         elif addition_data == "new_algo":
             self.sample = np.linspace(-15, 15, self.length)
             functin_sample = self.new_created_function(self.sample)
-            self.data = np.random.choice(self.sample, size=1000, p=functin_sample/np.sum(functin_sample))
+            self.data = np.random.choice(self.sample, size=self.length, p=functin_sample/np.sum(functin_sample))
         elif addition_data == "true2d":
             self.sample = np.linspace(-15, 15, self.length)
             functin_sample = self.new_created_function(self.sample)
-            self.data = np.random.choice(self.sample, size=1000, p=functin_sample/np.sum(functin_sample))
+            self.data = np.random.choice(self.sample, size=self.length, p=functin_sample/np.sum(functin_sample))
             self.sample = np.linspace(-15, 15 , self.length)
             functin_sample = self.new_created_function(self.sample)
-            self.data2 = np.random.choice(self.sample, size=1000, p=functin_sample/np.sum(functin_sample))
+            self.data2 = np.random.choice(self.sample, size=self.length, p=functin_sample/np.sum(functin_sample))
         elif addition_data == "new_two":
             self.sample = np.linspace(10, 40, int((30) / 0.02))
             functin_sample = self.new_created_function(self.sample)
-            self.data = np.random.choice(self.sample, size=1000, p=functin_sample/np.sum(functin_sample))
+            self.data = np.random.choice(self.sample, size=self.length, p=functin_sample/np.sum(functin_sample))
             
             self.sample = np.linspace(-40, -10, int((30) / 0.02))
             functin_sample = self.new_created_function(self.sample)
-            self.data2 = np.random.choice(self.sample, size=1000, p=functin_sample/np.sum(functin_sample))
+            self.data2 = np.random.choice(self.sample, size=self.length, p=functin_sample/np.sum(functin_sample))
         
 
     
@@ -265,23 +265,18 @@ class Probability_Distribution_Function_AND_New_Function(object):
             ax.set_ylim(0, 100)
 
 
-
-        def activate_functions(self):
-            
-            # Print all the nessasary functions
-            self.plot_graphs(pdf_type="regular")
-            self.binolial_graph(pdf_type="regular")
-            self.representation_in2d(pdf_type="regular")
-            self.mgc_plot("Linear", only_mgc=True)
-            self.plot_graphs(pdf_type="not regular")
-            self.representation_in2d(pdf_type="not regular")
-
-
-
+    def activate_functions(self):    
+        # Print all the nessasary functions
+        self.plot_graphs(pdf_type="regular")
+        self.binolial_graph(pdf_type="regular")
+        self.representation_in2d(pdf_type="regular")
+        self.mgc_plot("Linear", only_mgc=True)
+        self.plot_graphs(pdf_type="not regular")
+        self.representation_in2d(pdf_type="not regular")
 
 
 
 if __name__ == "__main__":
 
-    pdf_class = Probability_Distribution_Function_AND_New_Function(0,2.5,1000000)
+    pdf_class = Probability_Distribution_Function_AND_New_Function(0, 2.5, 1000000)
     pdf_class.activate_functions()
